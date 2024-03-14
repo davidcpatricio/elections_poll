@@ -10,3 +10,6 @@ class Party(models.Model):
     icon = models.ImageField(
         upload_to='product_images/%Y/%m/', blank=True, null=True)
     votes = models.IntegerField(default=0)
+
+    def __str__(self) -> str:
+        return self.name
