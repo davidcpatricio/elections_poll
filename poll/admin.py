@@ -4,3 +4,4 @@ from . import models
 
 # Register your models here.
 admin.site.register(models.Party)
+admin.site.register(models.Profile)
