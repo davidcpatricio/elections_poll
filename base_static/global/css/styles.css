@@ -11,4 +11,17 @@ html {
 
 body {
   font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background: #408a6e;
+}
+
+.content {
+  margin: 0 auto;
+  padding: 1.5rem;
+  max-width: 120rem;
+  background: #eee;
+}
+
+.table-cel img {
+  width: 5rem;
+  height: 5rem;
 }
