@@ -1,5 +1,9 @@
+import os
+
+from django.conf import settings
 from django.contrib.auth.models import User
 from django.db import models
+from PIL import Image
 
 
 class Party(models.Model):
@@ -11,6 +15,25 @@ class Party(models.Model):
     icon = models.ImageField(
         upload_to='product_images/%Y/%m/', blank=True, null=True)
     votes = models.IntegerField(default=0)
+
+    @staticmethod
+    def resize_image(img, new_width=300):
+        img_full_path = os.path.join(settings.MEDIA_ROOT, img.name)
+        img_pil = Image.open(img_full_path)
+        original_width, original_height = img_pil.size
+
+        if original_width <= new_width:
+            img_pil.close()
+            return
+
+        new_height = round((new_width * original_height) / original_width)
+
+        new_img = img_pil.resize((new_width, new_height), Image.LANCZOS)
+        new_img.save(
+            img_full_path,
+            optimize=True,
+            quality=50
+        )
 
     def __str__(self) -> str:
         return self.name
