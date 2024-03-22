@@ -74,3 +74,8 @@ class Profile(models.Model):
 
     def __str__(self) -> str:
         return self.full_name
+
+
+class Vote(models.Model):
+    voter = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    party = models.ForeignKey(Party, on_delete=models.CASCADE)
