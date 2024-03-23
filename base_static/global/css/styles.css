@@ -21,6 +21,18 @@ body {
   background: #eee;
 }
 
+.results-table {
+  margin: 0 auto;
+}
+
+.table-header {
+  font-size: 2rem;
+}
+
+.table-cel {
+  font-size: 1.6rem;
+}
+
 .table-cel img {
   width: 5rem;
   height: 5rem;

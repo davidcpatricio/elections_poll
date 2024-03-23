@@ -42,7 +42,7 @@ class Party(models.Model):
 class Profile(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     full_name = models.CharField(max_length=255)
-    id_number = models.CharField(max_length=9)
+    id_number = models.CharField(max_length=9, unique=True)
     date_of_birth = models.DateField()
     region = models.CharField(
         max_length=2,
