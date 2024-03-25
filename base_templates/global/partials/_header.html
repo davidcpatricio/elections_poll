@@ -1,0 +1,32 @@
+<header class="header">
+  <h1 class="header-heading">
+    <a href="{% url 'poll:index' %}" class="header-link">
+      Legislativas 2024
+    </a>
+  </h1>
+
+  <nav class="menu">
+    <ul class="menu-list">
+
+      {% if user.is_authenticated %}
+        <li class="menu-item">
+          <a href="{% url "poll:vote" %}" class="menu-link">Votar</a>
+        </li>
+        <li class="menu-item">
+          <a href="{% url "poll:update" %}" class="menu-link">Perfil</a>
+        </li>
+        <li class="menu-item">
+          <a href="{% url "poll:logout" %}" class="menu-link">Sair</a>
+        </li>
+      {% else %}
+        <li class="menu-item">
+          <a href="{% url "poll:login" %}" class="menu-link">Entrar</a>
+        </li>
+        <li class="menu-item">
+          <a href="{% url "poll:register" %}" class="menu-link">Registar</a>
+        </li>
+      {% endif %}
+
+    </ul>
+  </nav>
+</header>

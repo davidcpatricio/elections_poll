@@ -3,45 +3,11 @@
 <html lang="en">
 
   <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href={% static "global/css/styles.css" %}>
-    <title>Document</title>
+    {% include "global/partials/_head.html" %}
   </head>
 
   <body>
-    <header class="header">
-      <h1 class="header-heading">
-        <a href="{% url 'poll:index' %}" class="header-link">
-          Legislativas 2024
-        </a>
-      </h1>
-  
-      <nav class="menu">
-        <ul class="menu-list">
-  
-          {% if user.is_authenticated %}
-            <li class="menu-item">
-              <a href="/" class="menu-link">Votar</a>
-            </li>
-            <li class="menu-item">
-              <a href="/" class="menu-link">Perfil</a>
-            </li>
-            <li class="menu-item">
-              <a href="/" class="menu-link">Sair</a>
-            </li>
-          {% else %}
-            <li class="menu-item">
-              <a href="/" class="menu-link">Entrar</a>
-            </li>
-            <li class="menu-item">
-              <a href="/" class="menu-link">Registar</a>
-            </li>
-          {% endif %}
-  
-        </ul>
-      </nav>
-    </header>
+    {% include "global/partials/_header.html" %}
 
     <main class="content">
       {% block content %}{% endblock content %}
