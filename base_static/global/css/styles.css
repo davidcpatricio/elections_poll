@@ -1,4 +1,11 @@
-* {
+:root {
+  --color-dark: #19382c;
+  --color-light-grey: #eee;
+}
+
+*,
+*::before,
+*::after {
   margin: 0;
   padding: 0;
   outline: none;
@@ -6,19 +13,70 @@
 }
 
 html {
-  font-size: 62.5%
+  font-size: 62.5%;
 }
 
 body {
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background: #408a6e;
+}
+
+.header {
+  background: var(--color-dark);
+  width: 100%;
+  height: 13.4rem;
+  padding: 1.5rem;
+}
+
+.header-heading {
+  font-size: 4rem;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.header-link {
+  text-decoration: none;
+  color: var(--color-light-grey);
+}
+
+.menu {
+  margin: 1.5rem;
+}
+
+.menu-list {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  flex-flow: row wrap;
+}
+
+.menu-link {
+  display: block;
+  padding: 1.5rem;
+  font-size: 1.6rem;
+  text-decoration: none;
+  color: var(--color-light-grey);
+  transition: all 300ms ease-in-out;
+}
+
+.menu-link:hover {
+  background: var(--color-light-grey);
+  color: var(--color-dark);
 }
 
 .content {
   margin: 0 auto;
   padding: 1.5rem;
   max-width: 120rem;
-  background: #eee;
+  height: 100%;
+  background: var(--color-light-grey);
+}
+
+.table-caption {
+  padding: 1.5rem;
+  font-size: 2.4rem;
+  font-weight: bold;
+  margin-bottom: 1.5rem;
 }
 
 .results-table {
@@ -26,14 +84,19 @@ body {
 }
 
 .table-header {
-  font-size: 2rem;
+  font-size: 1.8rem;
 }
 
 .table-cel {
-  font-size: 1.6rem;
+  padding: 0 0 0 1.5rem;
+  font-size: 1.2rem;
+}
+
+
+.table-cel:last-of-type {
+  text-align: right;
 }
 
 .table-cel img {
-  width: 5rem;
   height: 5rem;
 }
