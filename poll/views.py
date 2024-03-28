@@ -1,7 +1,7 @@
 from django.http import HttpResponse
 from django.shortcuts import render
 
-from poll.models import Party
+from .models import Party
 
 
 def index(request):
@@ -16,11 +16,11 @@ def index(request):
 
 
 def register(request):
-    return HttpResponse('REGISTER')
+    return render(request, 'poll/pages/register.html')
 
 
 def login(request):
-    return HttpResponse('LOGIN')
+    return render(request, 'poll/pages/login.html')
 
 
 def logout(request):
